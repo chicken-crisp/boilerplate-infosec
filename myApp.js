@@ -2,9 +2,6 @@ const express = require('express');
 const app = express();
 
 
-const helmet = require('helmet')
-helmet.hidePoweredBy();
-
 
 
 
@@ -62,3 +59,5 @@ let port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Your app is listening on port ${port}`);
 });
+
+app.use(helmet.hidePoweredBy())
